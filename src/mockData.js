@@ -1,0 +1,133 @@
+// Initial Mock Data and State for KDD Smart Security Prototype
+
+export const INITIAL_DEVICES = [
+  {
+    id: 'kdd-fh500-0012',
+    name: 'FH500 — ولوو کشنده',
+    model: 'Volvo FH500 (2023)',
+    serial: 'KDD-FH500-0012',
+    simNumber: '09123456789',
+    activeSim: 1,
+    isOnline: true,
+    isArmed: true,
+    battery: 98,
+    batteryVoltage: 12.8,
+    powerConnected: true,
+    powerVoltage: 24.2,
+    gsmSignal: 28, // RSSI out of 31
+    networkType: '4G LTE / GPRS',
+    lastSync: 'چند لحظه پیش',
+    vehicleImage: '/screens/06_داشبورد___خانه.jpg',
+  },
+  {
+    id: 'kdd-r460-0038',
+    name: 'R460 — اسکانیا ترانزیت',
+    model: 'Scania R460 Topline',
+    serial: 'KDD-R460-0038',
+    simNumber: '09351234567',
+    activeSim: 1,
+    isOnline: true,
+    isArmed: false,
+    battery: 94,
+    batteryVoltage: 12.6,
+    powerConnected: true,
+    powerVoltage: 24.0,
+    gsmSignal: 24,
+    networkType: '4G LTE',
+    lastSync: '۵ دقیقه پیش',
+    vehicleImage: '/screens/06_داشبورد___خانه.jpg',
+  },
+  {
+    id: 'kdd-actros-0091',
+    name: 'Actros — بنز آکتروس ۱۸۴۵',
+    model: 'Mercedes-Benz Actros 1845',
+    serial: 'KDD-ACTROS-0091',
+    simNumber: '09129876543',
+    activeSim: 2,
+    isOnline: false, // SMS only mode
+    isArmed: true,
+    battery: 88,
+    batteryVoltage: 12.4,
+    powerConnected: true,
+    powerVoltage: 24.1,
+    gsmSignal: 19,
+    networkType: 'GSM 2G (SMS Mode)',
+    lastSync: '۲۰ دقیقه پیش',
+    vehicleImage: '/screens/06_داشبورد___خانه.jpg',
+  },
+  {
+    id: 'kdd-kmp-0007',
+    name: 'کمپرسی ۱ — بنز مایلر ۲۶۲۸',
+    model: 'Mercedes-Benz 2628 Dumper',
+    serial: 'KDD-KMP-0007',
+    simNumber: '09127654321',
+    activeSim: 1,
+    isOnline: true,
+    isArmed: false,
+    battery: 100,
+    batteryVoltage: 13.0,
+    powerConnected: true,
+    powerVoltage: 24.5,
+    gsmSignal: 30,
+    networkType: '4G LTE',
+    lastSync: 'همین الان',
+    vehicleImage: '/screens/06_داشبورد___خانه.jpg',
+  },
+];
+
+export const INITIAL_RELAYS = [
+  { id: 1, name: 'قطع‌کن استارت و سوخت (Anti-Theft)', mode: 'مستقل', state: false, isMomentary: false, isCritical: true, icon: 'ShieldAlert' },
+  { id: 2, name: 'یخچال و سردخانه کانتینر', mode: 'مستقل', state: true, isMomentary: false, isCritical: false, icon: 'Snowflake' },
+  { id: 3, name: 'پروژکتورهای سقف و عقب', mode: 'مستقل', state: true, isMomentary: false, isCritical: false, icon: 'Lightbulb' },
+  { id: 4, name: 'پمپ هیدرولیک کمپرسی', mode: 'مستقل', state: false, isMomentary: false, isCritical: true, icon: 'Zap' },
+  { id: 5, name: 'قفل مرکزی و دربازکن کابین', mode: 'پارتیشن ۱', state: false, isMomentary: true, isCritical: false, icon: 'Lock' },
+  { id: 6, name: 'بوق و آژیر پرقدرت بیرونی', mode: 'پارتیشن ۲', state: false, isMomentary: true, isCritical: false, icon: 'Volume2' },
+  { id: 7, name: 'روشنایی داخل کابین و خواب', mode: 'مستقل', state: true, isMomentary: false, isCritical: false, icon: 'Sun' },
+  { id: 8, name: 'خروجی رزرو / گرمکن آینه', mode: 'مستقل', state: false, isMomentary: false, isCritical: false, icon: 'Power' },
+];
+
+export const INITIAL_SENSORS = [
+  { id: 1, name: 'سنسور ۱ — چشمی راداری داخل کابین', partition: 1, type: 'NO', is24h: true, isTriggered: false, icon: 'Eye' },
+  { id: 2, name: 'سنسور ۲ — مگنت درب سمت راننده', partition: 2, type: 'NC', is24h: false, isTriggered: false, icon: 'DoorClosed' },
+  { id: 3, name: 'سنسور ۳ — مگنت درب سمت شاگرد', partition: 3, type: 'NO', is24h: true, isTriggered: false, icon: 'DoorClosed' },
+  { id: 4, name: 'سنسور ۴ — سنسور ضربه و لرزش (Shock)', partition: 1, type: 'NC', is24h: false, isTriggered: false, icon: 'Activity' },
+  { id: 5, name: 'سنسور ۵ — دتکتور دود و حرارت کابین', partition: 4, type: 'NC', is24h: true, isTriggered: false, icon: 'Flame' },
+  { id: 6, name: 'سنسور ۶ — سنسور باز شدن درب باک گازوئیل', partition: 2, type: 'NO', is24h: false, isTriggered: false, icon: 'Fuel' },
+  { id: 7, name: 'سنسور ۷ — مگنت درب کانتینر بار', partition: 3, type: 'NC', is24h: true, isTriggered: false, icon: 'Package' },
+  { id: 8, name: 'سنسور ۸ — سنسور کاپوت و محفظه باتری', partition: 4, type: 'NO', is24h: false, isTriggered: false, icon: 'Cpu' },
+];
+
+export const INITIAL_CONTACTS = [
+  { id: 1, name: 'علی محمدی (مالک)', phone: '09123456789', partition: 1, call: true, sms: true, powerCut: true, armDisarm: true, report: true, isAdmin: true },
+  { id: 2, name: 'رضا احمدی (راننده)', phone: '09351234567', partition: 1, call: true, sms: true, powerCut: true, armDisarm: true, report: true, isAdmin: false },
+  { id: 3, name: 'مریم کریمی (ترابری)', phone: '09129876543', partition: 2, call: true, sms: true, powerCut: true, armDisarm: true, report: true, isAdmin: false },
+  { id: 4, name: 'حسین رضایی (کمک‌راننده)', phone: '09127654321', partition: 3, call: true, sms: true, powerCut: true, armDisarm: true, report: true, isAdmin: false },
+  { id: 5, name: 'سارا موسوی (سرپرست)', phone: '09304567890', partition: 1, call: true, sms: true, powerCut: true, armDisarm: true, report: true, isAdmin: false },
+  { id: 6, name: 'امیرحسین نوری (نگهبانی)', phone: '09105556677', partition: 2, call: true, sms: true, powerCut: true, armDisarm: true, report: true, isAdmin: false },
+  { id: 7, name: 'زهرا شریفی (پشتیبانی)', phone: '09332221100', partition: 3, call: true, sms: true, powerCut: true, armDisarm: true, report: true, isAdmin: false },
+  { id: 8, name: 'محمد صادقی (مدیر)', phone: '09123334455', partition: 4, call: true, sms: true, powerCut: true, armDisarm: true, report: true, isAdmin: false },
+];
+
+export const INITIAL_REMOTES = [
+  { id: 0, name: 'ریموت ۰ (فابریک ۱)', partition: 1, isLocked: false, codeSequence: ['قفل', 'باز', 'قفل', 'قفل'] },
+  { id: 1, name: 'ریموت ۱ (یدک راننده)', partition: 2, isLocked: false, codeSequence: ['قفل', 'قفل', 'باز'] },
+  { id: 2, name: 'ریموت ۲ (کمک‌راننده)', partition: 3, isLocked: false, codeSequence: ['باز', 'قفل', 'باز'] },
+  { id: 3, name: 'ریموت ۳ (نگهبانی)', partition: 4, isLocked: false, codeSequence: ['قفل', 'باز'] },
+  { id: 4, name: 'ریموت ۴ (مدیر ترابری)', partition: 1, isLocked: false, codeSequence: ['قفل', 'قفل', 'قفل'] },
+  { id: 5, name: 'ریموت ۵', partition: 2, isLocked: true, codeSequence: [] },
+  { id: 6, name: 'ریموت ۶', partition: 3, isLocked: true, codeSequence: [] },
+  { id: 7, name: 'ریموت ۷', partition: 4, isLocked: true, codeSequence: [] },
+  { id: 8, name: 'ریموت ۸', partition: 1, isLocked: true, codeSequence: [] },
+  { id: 9, name: 'ریموت ۹', partition: 2, isLocked: true, codeSequence: [] },
+];
+
+export const INITIAL_DEVICE_SETTINGS = {
+  powerCutSms: true,
+  batteryTestSms: false,
+  language: 'فارسی',
+  callOnPowerCut: false,
+  remoteSemiArm: false,
+  speakerMelody: 'ملودی ۱',
+  sirenDurationMinutes: 1,
+  alarmMode: 'ابتدا تماس سپس پیامک با تکرار',
+};
